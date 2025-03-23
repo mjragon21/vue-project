@@ -76,7 +76,7 @@
             <table id="employeeTable" class="display w-full">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <!-- <th>ID</th> -->
                         <th>Name</th>
                         <th>Email</th>
                         <th>Position</th>
@@ -88,7 +88,7 @@
                 <tbody>
                     @foreach($employees as $employee)
                     <tr>
-                        <td>{{ $employee->id }}</td>
+                        <!-- <td>{{ $employee->id }}</td> -->
                         <td>{{ $employee->name }}</td>
                         <td>{{ $employee->email }}</td>
                         <td>{{ $employee->position }}</td>
@@ -108,23 +108,6 @@
             </table>
         </div>
     </div>
-    <script setup>
-        import $ from "jquery";
-        import "datatables.net";
-        import "datatables.net-responsive";
-
-        import {
-            onMounted
-        } from "vue";
-
-        onMounted(() => {
-            $("#employeeTable").DataTable({
-                responsive: true,
-                searching: true,
-                pagingType: "full_numbers"
-            });
-        });
-    </script>
 
 
 

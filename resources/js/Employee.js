@@ -1,6 +1,4 @@
 import $ from "jquery";
-import "datatables.net";
-import "datatables.net-responsive";
 import { onMounted } from "vue";
 
 onMounted(() => {

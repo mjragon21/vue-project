@@ -41,14 +41,15 @@ class EmployeeController extends Controller
 
     public function update(Request $request, Employee $employee)
     {
-        $update_employee = $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:employees,email',
+            'email' => 'required|email|unique:employees,email,' . $employee->id,
             'position' => 'required|string|max:255',
             'department' => 'required|string|max:255',
             'hire_date' => 'required|date',
         ]);
-        $employee->update($update_employee);
+
+        $employee->update($validated);
 
         return redirect()->route('employee.index')->with('success', 'Employee updated successfully!');
     }
